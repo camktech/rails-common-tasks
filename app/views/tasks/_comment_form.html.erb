@@ -1,0 +1,9 @@
+<div class="comment-form">
+  <%= form_for([@task, comment], remote: true) do |form| %>
+    <label for='content'>Comment</label>
+    <%= form.text_area :content %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>
