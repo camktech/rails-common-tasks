@@ -1,5 +1,11 @@
 .task-header{
   display: inline-block;
+  margin-top: 0px;
+}
+
+.add-new-task-button{
+  float: right;
+  font-size: 22px;
 }
 
 .task{
@@ -40,12 +46,14 @@
   }
 
   textarea{
+    word-break: break-all;
     border-radius: 5px;
     display: block;
     width: 100%;
   }
 
   .task-description{
+    word-break: break-all;
     padding-left: 20px;
     padding-right: 20px;
   }

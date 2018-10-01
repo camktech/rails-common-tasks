@@ -10,7 +10,7 @@
 
   <body>
     <% if @current_user %>
-      <div class='nav-bar clearfix'>
+      <div class='nav-bar'>
         <div class="links">
           <%= nav_link 'Profile', users_path %>
           <%= nav_link 'Tasks', tasks_path %>
@@ -19,6 +19,7 @@
           <%= link_to "logout #{@current_user.name}", sessions_destroy_path, method: :delete %>
         </div>
       </div>
+      
     <% end %>
     <div id="container">
       <%= yield %>
