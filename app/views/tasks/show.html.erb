@@ -1,35 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<div class="task">
-  <label>Task:</label>
-  <p><%= @task.description %></p>
+<%= render partial: 'task', locals: {task: @task}%>
 
-  <label>Complete?:</label>
-  <p><%= @task.is_complete %></p>
 
-  <%= link_to 'delete', @task, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<div class="comment-section">
+  <%= render :partial => 'comment_form', locals: {comment: Comment.new, is_edit: false} %>
+
+  <% @task.comments.reverse.each do |comment| %>
+    <div class="comment">
+
+      <% if @current_user.id == comment.user.id %>
+        <div class="comment-actions">
+          <span class='edit-comment-button'>
+            <%= fa_icon 'pencil' %>
+          </span>
+
+          <%= link_to "#{@task.id}/comments/#{comment.id}", method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <%= fa_icon 'times' %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <p class="comment-user-name">
+        <%= comment.user.name %>
+      </p>
+
+      <p class="comment-content">
+        <%= comment.content %>
+      </p>
+
+      <div class="edit-comment">
+        <% if @current_user.id == comment.user.id %>
+          <%= render :partial => 'comment_form', locals: {comment: comment, is_edit: true} %>
+        <% end %>
+      </div>
+
+    </div>
+  <% end %>
 </div>
-
-<%= render :partial => 'comment_form', locals: {comment: Comment.new} %>
-
-<% @task.comments.reverse.each do |comment| %>
-  <div class="comment">
-
-    <p class="comment-user-name">
-      <%= comment.user.name %>
-    </p>
-
-    <p class="comment-content">
-      <%= comment.content %>
-    </p>
-
-    <% if @current_user.id == comment.user.id %>
-      <%= render :partial => 'comment_form', locals: {comment: comment} %>
-      <%= link_to 'delete', "#{@task.id}/comments/#{comment.id}", method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-
-  </div>
-<% end %>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>

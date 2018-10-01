@@ -32,7 +32,7 @@ class TasksController < ApplicationController
       @task.destroy 
       redirect_to tasks_url, notice: 'Task was successfully destroyed.' 
     else
-      redirect_to tasks_url, notice: 'You cannot destroy another user\'s task'
+      redirect_to @task, notice: 'You cannot destroy another user\'s task'
     end
   end
 

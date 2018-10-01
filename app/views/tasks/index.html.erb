@@ -1,22 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tasks</h1>
+<h1 class='task-header'>Tasks</h1>
+<%= link_to new_task_path do %>
+  <%= fa_icon 'plus-circle' %>
+<% end %>
 
-    <% @tasks.each do |task| %>
-      <div class="task">
-        <label>Task:</label>
-        <p><%= task.description %></p>
+<% @tasks.each do |task| %>
 
-        <label>Complete?:</label>
-        <p><%= task.is_complete %></p>
-      </div>
-      <div>
-        <span><%= link_to 'Show', task %></span>
-        <span><%= link_to 'Edit', edit_task_path(task) %></span>
-        <span><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-      </div>
-    <% end %>
+  <%= render partial: 'task', locals: {task: task}%>
 
-<br>
+<% end %>
 
-<%= link_to 'New Task', new_task_path %>
+
+
+

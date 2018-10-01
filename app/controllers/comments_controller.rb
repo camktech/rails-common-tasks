@@ -1,14 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [:update, :destroy]
   before_action :set_task, only: [:create, :update, :destroy]
-
-  def index
-    @comments = Comment.all
-  end
-
-  def new
-    @comment = Comment.new
-  end
 
   def create
     @comment = Comment.new(comment_params.merge({task_id: @task.id, user_id: @current_user.id}))
@@ -16,7 +8,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @task, notice: 'Comment was successfully created.' 
     else
-      redirect_to @task
+      redirect_to @task, notice: 'Comment was not created.' 
     end
   end
 

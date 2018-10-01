@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :check_user_session, only: [:new, :create]
+  
   def index
     @current_user
   end
@@ -21,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
+    if @current_user == @user && @user.update(user_params)
       redirect_to users_path, notice: 'User was successfully updated.'
     else
       render :edit
@@ -29,8 +30,11 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
-    redirect_to users_url, notice: 'User was successfully destroyed.' 
+    if @current_user == @user && @user.destroy
+      redirect_to users_url, notice: 'User was successfully destroyed.' 
+    else
+      redirect_to @user, notice: 'User cannot be deleted'
+    end
   end
 
 private

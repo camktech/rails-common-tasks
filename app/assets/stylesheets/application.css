@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
 body,html{
@@ -33,6 +34,7 @@ body{
 .links{
   margin: 0px;
   height: 35px;
+  display: inline-block;
 }
 
 .links a{
@@ -53,12 +55,22 @@ body{
   border: 1px solid blue;
   border-top: none;
   color: white;
-  /*min-width: 50px;*/
 }
 
 .logout{
   float: right;
   margin-right: 20px;
+  margin-top: 5px;
+}
+
+.logout a{
+  text-decoration: none;
+  color: white;
+}
+
+#container{
+  width: 70%;
+  margin: 0 auto;
 }
 
 

@@ -1,0 +1,65 @@
+.comment-section{
+  width: 90%;
+  margin: 5px auto;
+}
+
+.comment-form{
+  background-color: #cac7c7;
+  border-radius: 5px;
+  padding: 10px 15px;
+
+  textarea{
+    border-radius: 5px;
+    display: block;
+    width: 90%;
+    margin: 15px auto;
+  }
+  .actions{
+    text-align: right;
+    padding: 5px;
+  }
+}
+
+.comment{
+  background-color: #cac7c7;
+  margin: 5px 0px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  position: relative;
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .edit-comment{
+    display: none;
+  }
+
+  .comment-actions{
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+
+  .comment-user-name{
+    margin-top: 0px;
+    font-weight: bold;
+  }
+
+  .comment-content{
+
+  }
+
+  .fa-check{
+    color: green;
+  }
+
+  .fa-times{
+    color: red;
+  }
+
+}

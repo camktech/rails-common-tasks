@@ -1,9 +1,16 @@
 <div class="comment-form">
   <%= form_for([@task, comment], remote: true) do |form| %>
-    <label for='content'>Comment</label>
+
+    <% unless is_edit %>
+      <h5>Leave a comment</h5>
+    <% end %>
+
     <%= form.text_area :content %>
     <div class="actions">
       <%= form.submit %>
+      <% if is_edit %>
+        <button class='cancel-edit-comment' type='button'>Cancel</button>
+      <% end %>
     </div>
   <% end %>
 </div>

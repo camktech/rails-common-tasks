@@ -1,0 +1,61 @@
+.task-header{
+  display: inline-block;
+}
+
+.task{
+  position: relative;
+  background-color: #ccc49d;
+  text-decoration: none;
+  color: black;
+  padding: 20px 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .task-actions{
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 10px 15px;
+  }
+
+  .show-task-link{
+    display: block;
+  }
+
+  .task-user-name{
+    float: right;
+    display: inline-block;
+    margin: 0px;
+  }
+
+  label{
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  textarea{
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+  }
+
+  .task-description{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .fa-check{
+    color: green;
+  }
+
+  .fa-times{
+    color: red;
+  }
+
+}

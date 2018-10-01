@@ -15,9 +15,13 @@
           <%= nav_link 'Profile', users_path %>
           <%= nav_link 'Tasks', tasks_path %>
         </div>
-        <div class="logout"><%= button_to 'logout', {method: :post, controller: 'sessions', action: 'destroy'} %></div>
+        <div class="logout">
+          <%= link_to 'logout', sessions_destroy_path, method: :delete %>
+        </div>
       </div>
     <% end %>
-    <%= yield %>
+    <div id="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
