@@ -19,9 +19,10 @@
           <%= link_to "logout #{@current_user.name}", sessions_destroy_path, method: :delete %>
         </div>
       </div>
-      
     <% end %>
+
     <div id="container">
+      <p id="notice"><%= notice %></p>
       <%= yield %>
     </div>
   </body>

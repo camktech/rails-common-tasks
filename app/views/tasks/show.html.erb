@@ -1,8 +1,4 @@
-<p id="notice"><%= notice %></p>
-
 <%= render partial: 'task', locals: {task: @task}%>
-
-
 
 <div class="comment-section">
   <%= render :partial => 'comment_form', locals: {comment: Comment.new, is_edit: false} %>
