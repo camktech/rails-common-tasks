@@ -5,7 +5,7 @@ All users can create tasks and comments on any tasks. However, editing and remov
 
 * clone this repo
 * bundle install
-* rake db:setup (this will seed five users, user0, user1, etc. each with password 'password')
+* rake db:setup (this will seed five users, user1, user2, etc. each with password 'password')
 * rails s
 
 ### Run Tests
