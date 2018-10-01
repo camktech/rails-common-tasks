@@ -1,24 +1,13 @@
-# README
+### Notes
+All users can create tasks and comments on any tasks. However, editing and removing actions are permitted only to the user that created the respective task or comment.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Setup
 
-Things you may want to cover:
+* clone this repo
+* bundle install
+* rake db:setup (this will seed five users, user0, user1, etc. each with password 'password')
+* rails s
 
-* Ruby version
+### Run Tests
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* rspec
