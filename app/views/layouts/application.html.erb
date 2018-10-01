@@ -16,7 +16,7 @@
           <%= nav_link 'Tasks', tasks_path %>
         </div>
         <div class="logout">
-          <%= link_to 'logout', sessions_destroy_path, method: :delete %>
+          <%= link_to "logout #{@current_user.name}", sessions_destroy_path, method: :delete %>
         </div>
       </div>
     <% end %>

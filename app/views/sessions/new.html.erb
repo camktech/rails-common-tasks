@@ -1,17 +1,19 @@
 <%= form_with(action: 'create', local: true) do |form| %>
 
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="user-form">
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
 
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
+    <div>
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit 'Sign In' %>
+    <div class="actions">
+      <%= form.submit 'Sign In' %>
+    </div>
   </div>
 
 <% end %>

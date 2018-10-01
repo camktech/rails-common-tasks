@@ -10,17 +10,24 @@
       </ul>
     </div>
   <% end %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-  <% if(current_page?(action:'new')) %>
+  <div class="user-form">
     <div>
-      <%= form.label :password %>
-      <%= form.password_field :password %>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
     </div>
-  <% end %>
-  <div class="actions">
-    <%= form.submit %>
+    <% if(current_page?(action:'new')) %>
+      <div>
+        <%= form.label :password %>
+        <%= form.password_field :password %>
+      </div>
+      <div class="actions">
+        <%= form.submit 'Create Account'%>
+      </div>
+    <% else %>
+      <div class="actions">
+        <%= form.submit 'Update'%>
+      </div>
+    <% end %>
+    
   </div>
 <% end %>
